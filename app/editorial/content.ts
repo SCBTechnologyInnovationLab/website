@@ -60,6 +60,225 @@ const newsEntries: readonly EditorialEntry[] = [
 ];
 const blogEntries: readonly EditorialEntry[] = [
 {
+  "slug": "when-the-marker-changes-the-message",
+  "title": "When the marker changes the message",
+  "date": "2026-10-19",
+  "summary": "cPRIME reads the RNA consequences of variants edited into their native genomic context. Its most instructive result is that the extra edit used to identify an experiment can change the biology we hoped to measure.",
+  "status": "published",
+  "image": {
+    "src": "/blog-images/variant-marker-rna.svg",
+    "alt": "Conceptual DNA-to-RNA comparison: an intended variant and an adjacent marker are tracked together, while a dashed alternative RNA path shows why a missing read can have more than one explanation.",
+    "width": 600,
+    "height": 600
+  },
+  "body": [
+    {
+      "type": "paragraph",
+      "text": "A good molecular experiment needs a way to recognize what it changed. That sounds like an administrative problem: label the intervention, recover the label, count the result. But a label written into a biological sequence becomes part of the system under study. Its apparent convenience can conceal an extra intervention."
+    },
+    {
+      "type": "paragraph",
+      "text": "A new study from Ghanem El Kassem, Constanze Westphal, Marvin Doebel, Jasmine Hillmer, Tanja Seifert and Michael Boettcher makes that issue unusually concrete. Their method, cPRIME, measures the RNA consequences of genetic variants introduced into endogenous DNA. Along the way, they show that synonymous marker edits, which preserve the encoded amino acid, can alter the RNA-level result attributed to the intended variant."
+    },
+    {
+      "type": "paragraph",
+      "text": "The paper was published in Nature Communications on October 15, 2026. It is peer-reviewed research, not a preprint. For us, its value lies in both the measurement strategy and the warning about what we count as an experimental control."
+    },
+    {
+      "type": "link",
+      "text": "Paper was published in Nature Communications on October 15, 2026",
+      "href": "https://www.nature.com/articles/s41467-026-78344-9"
+    },
+    {
+      "type": "heading",
+      "text": "Read the variant twice"
+    },
+    {
+      "type": "paragraph",
+      "text": "Imagine introducing a DNA variant into a mixed population of cells and finding very little of that variant in the RNA. Several explanations remain possible. Perhaps the edit barely happened. Perhaps cells carrying it became less abundant. Perhaps the edited RNA was degraded or processed differently. An RNA count alone cannot separate these possibilities."
+    },
+    {
+      "type": "paragraph",
+      "text": "cPRIME pairs two measurements: the representation of an edited sequence in genomic DNA and its representation in complementary DNA, the DNA copy made from RNA. The cPRIME score is the variant's cDNA reads per million divided by its genomic-DNA reads per million. The denominator anchors the RNA readout to the representation of the edit actually recovered from the cell population."
+    },
+    {
+      "type": "paragraph",
+      "text": "For a purely illustrative example, 100 variant reads per million in genomic DNA and 20 in cDNA would yield a score of 0.2. That is a relative representation measurement. It does not mean that every edited cell has lost precisely 80% of its RNA, or that 80% of cells have a particular phenotype."
+    },
+    {
+      "type": "paragraph",
+      "text": "The installation step uses prime editing. A guide RNA specifies the target and carries a template for the intended sequence change; an editor couples a DNA-nicking Cas9 to reverse transcriptase. The study combines pooled variant installation with targeted sequencing of each relevant DNA and RNA region. This keeps the variant in its native genomic setting, while requiring suitable readout designs for the regions being tested."
+    },
+    {
+      "type": "link",
+      "text": "Primary paper, Results and Methods",
+      "href": "https://www.nature.com/articles/s41467-026-78344-9.pdf"
+    },
+    {
+      "type": "heading",
+      "text": "A small second edit solves a real counting problem"
+    },
+    {
+      "type": "paragraph",
+      "text": "Rare edits are hard to distinguish from errors introduced during amplification or sequencing. If the intended result differs from the reference by one nucleotide, an accidental wrong base can resemble success."
+    },
+    {
+      "type": "paragraph",
+      "text": "The authors therefore add an adjacent synonymous marker and count the combined sequence. Seeing both changes together is a more distinctive signature than seeing either alone. In unedited controls, the background frequency of these combined signatures was reduced by roughly three orders of magnitude relative to single-base calls: 1,280-fold in KBM7 cells and 1,120-fold in K562 cells."
+    },
+    {
+      "type": "paragraph",
+      "text": "This is a substantial technical benefit. But synonymous describes a relationship to the protein's amino-acid sequence. RNA processing machinery encounters the nucleotide sequence itself. A change that leaves a codon synonymous can still modify a sequence feature involved in splicing."
+    },
+    {
+      "type": "paragraph",
+      "text": "We should therefore regard the combined edit as the actual experimental intervention. Calling one component a marker does not exempt it from biological scrutiny."
+    },
+    {
+      "type": "link",
+      "text": "Primary paper, Figure 1 and marker-validation results",
+      "href": "https://www.nature.com/articles/s41467-026-78344-9.pdf"
+    },
+    {
+      "type": "heading",
+      "text": "The revealing experiment removes the label"
+    },
+    {
+      "type": "paragraph",
+      "text": "The initial screen targeted NF1 exon 27 in two leukemia-derived cell lines with different chromosome complements: near-haploid KBM7 and near-triploid K562. Nonsense variants, which introduce premature stop codons, had low cPRIME scores, consistent with RNA loss through nonsense-mediated decay. Some variants without a premature stop also showed reduced scores."
+    },
+    {
+      "type": "paragraph",
+      "text": "To investigate, the authors tested selected edits individually and compared versions with and without the synonymous marker. Among three non-stop variants selected for strong RNA depletion, only one retained a reduced score after marker removal, and its effect was weaker. For another, changing the particular marker substitution also removed the strong phenotype."
+    },
+    {
+      "type": "paragraph",
+      "text": "The key observation is dependence on the exact combined sequence. The AI-based splice predictor Pangolin helped identify combinations consistent with new splice-site activity. These predictions help interpret the RNA signal; they do not, by themselves, establish the complete resulting transcript structure."
+    },
+    {
+      "type": "paragraph",
+      "text": "This is a useful role for computational prediction in an experimental workflow: inspect the supposedly auxiliary edit, propose why it might matter, and use that suspicion to design a discriminating comparison. We would be much less persuaded by agreement between a model and a pooled screen without the marker-removal experiments."
+    },
+    {
+      "type": "link",
+      "text": "Primary paper, synonymous-marker validation section",
+      "href": "https://www.nature.com/articles/s41467-026-78344-9.pdf"
+    },
+    {
+      "type": "heading",
+      "text": "What disappears from the readout?"
+    },
+    {
+      "type": "paragraph",
+      "text": "The assay's RNA measurement has a precise boundary. The detected transcript must retain the sequence being searched, the flanking primer-binding sites and an approximately canonical amplified-product size. The workflow includes size selection before sequencing."
+    },
+    {
+      "type": "paragraph",
+      "text": "Consequently, a low score can arise when less transcript survives, but it can also arise when processing produces RNA that the chosen assay does not capture. An alternative isoform may exist even though the expected product is depleted. The authors explicitly distinguish loss of the detected isoform from a necessary reduction in total transcript abundance."
+    },
+    {
+      "type": "paragraph",
+      "text": "That distinction should travel with every exported result. A column named “RNA loss” could quietly overstate what was measured. A more defensible description is reduced representation of the detected edited transcript relative to genomic DNA."
+    },
+    {
+      "type": "paragraph",
+      "text": "For mechanistic follow-up, we would ask which transcripts remain and what they encode. Isoform-resolved measurements, independent amplification designs and appropriate tests of RNA decay can address different parts of that question. Protein-level or cellular-function assays remain necessary when the biological claim concerns function beyond RNA."
+    },
+    {
+      "type": "link",
+      "text": "Primary paper, readout definition and Discussion",
+      "href": "https://www.nature.com/articles/s41467-026-78344-9.pdf"
+    },
+    {
+      "type": "heading",
+      "text": "Scale has two different meanings"
+    },
+    {
+      "type": "paragraph",
+      "text": "The expanded experiment used 341 guide designs representing 178 intended edits across six NF1 exons. The authors reported a correlation of 0.91 between cPRIME scores in the two cell lines, supporting reproducibility for the variants that could be quantified."
+    },
+    {
+      "type": "paragraph",
+      "text": "However, library size and usable measurement coverage are different quantities. For the additional exons, the fraction of edits detected above threshold ranged from 7.3% to 38% in KBM7 and 7.3% to 35% in K562. The study maintained substantial cell coverage, yet editing efficiency remained strongly dependent on the target and guide."
+    },
+    {
+      "type": "paragraph",
+      "text": "For experimental planning, the relevant denominator is therefore the set of intended biological questions, including those that produced no interpretable measurement. A well-reproduced subset can coexist with large gaps. Missing observations should remain visibly missing rather than becoming implicit evidence of no effect."
+    },
+    {
+      "type": "paragraph",
+      "text": "There is also a boundary on biological transfer. These experiments used engineered leukemia cell lines, including disruption of MLH1 to improve editing. Agreement between them is encouraging, but does not establish equivalent performance in a primary cell type, another gene or a disease-relevant tissue. The multi-region demonstration here spans six exons of one gene."
+    },
+    {
+      "type": "link",
+      "text": "Primary paper, multi-exon screen and Discussion",
+      "href": "https://www.nature.com/articles/s41467-026-78344-9.pdf"
+    },
+    {
+      "type": "heading",
+      "text": "Read a perfect classification score with its denominator"
+    },
+    {
+      "type": "paragraph",
+      "text": "The clinical comparison provides a particularly useful lesson in interpretation. After filtering, the authors reported an area under the receiver-operating-characteristic curve of 1.0 for separating three pathogenic or likely pathogenic variants from seventeen benign or likely benign variants in each cell line."
+    },
+    {
+      "type": "paragraph",
+      "text": "Those twenty variants matter as much as the headline number. The library was enriched for positions with predicted splice activity, and this analysis excluded nonsense variants and several other annotation categories. It is a small, selected proof of principle, as the paper itself acknowledges."
+    },
+    {
+      "type": "paragraph",
+      "text": "We should not convert that result into a claim that cPRIME can classify arbitrary uncertain variants with perfect accuracy. A variant can affect protein activity while leaving this RNA readout relatively unchanged. Conversely, an RNA-level change needs biological and clinical context before it can support a disease interpretation. The study's statistical RNA-response groups are descriptive screen categories, not clinically calibrated pathogenicity thresholds."
+    },
+    {
+      "type": "link",
+      "text": "Primary paper, Figure 4 and accompanying analysis",
+      "href": "https://www.nature.com/articles/s41467-026-78344-9.pdf"
+    },
+    {
+      "type": "heading",
+      "text": "What we would carry into the next screen"
+    },
+    {
+      "type": "paragraph",
+      "text": "Our practical reading is to preserve the full intervention and the full measurement history:"
+    },
+    {
+      "type": "list",
+      "items": [
+        "Record intended edits and markers together, including alternative marker designs",
+        "Evaluate both the intended sequence change and the combined sequence when checking predicted splice effects",
+        "Confirm important hits with an independent marker or a marker-free design where feasible",
+        "Report how many intended variants passed measurement thresholds, alongside the results for those that did",
+        "Keep transcript-specific depletion separate from total RNA abundance, protein function and clinical interpretation"
+      ],
+      "ordered": false
+    },
+    {
+      "type": "paragraph",
+      "text": "These are proposed evaluation principles, not additional experiments reported here. They make the data easier to reuse because they preserve the distinction between an intervention, its detection strategy and the conclusion drawn from it."
+    },
+    {
+      "type": "paragraph",
+      "text": "cPRIME offers an experimentally grounded way to connect DNA changes to RNA outcomes. Its most transferable lesson is that assay engineering deserves the same causal scrutiny as the biological question. If we change a sequence to make it easier to recognize, we also need to ask what that recognizable sequence does."
+    },
+    {
+      "type": "paragraph",
+      "text": "Reading note: this article is based on the complete primary manuscript, including its main-text methods and figure legends, and the author-maintained analysis repository. Results are author-reported; we have not reanalyzed the raw data or independently inspected all supplementary datasets. The publication is open access under CC BY 4.0. This commentary and its conceptual illustration are original; the illustration contains no experimental data."
+    },
+    {
+      "type": "link",
+      "text": "Author-maintained analysis repository",
+      "href": "https://github.com/Boettcher-Lab/cPRIME"
+    },
+    {
+      "type": "link",
+      "text": "CC BY 4.0",
+      "href": "https://creativecommons.org/licenses/by/4.0/"
+    }
+  ]
+},
+{
   "slug": "what-a-virtual-cell-should-predict",
   "title": "What should a virtual cell predict?",
   "date": "2026-10-12",
