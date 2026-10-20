@@ -3,7 +3,7 @@ import { access, readFile, readdir, stat } from "node:fs/promises";
 import test from "node:test";
 
 const output = new URL("../out/", import.meta.url);
-const base = new URL("https://raimonditechnologyinnovationlab.github.io/website/");
+const base = new URL("https://scbtechnologyinnovationlab.github.io/website/");
 const routes = [
   { file: "index.html", path: "", heading: null },
   { file: "news/index.html", path: "news/", heading: "News" },

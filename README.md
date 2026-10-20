@@ -3,9 +3,9 @@
 Our research in genomics, multiomics, and automation, and our vision for the
 Technology Innovation Lab.
 
-Public website: https://raimonditechnologyinnovationlab.github.io/website/
+Public website: https://scbtechnologyinnovationlab.github.io/website/
 
-Repository: https://github.com/RaimondiTechnologyInnovationLab/website
+Repository: https://github.com/SCBTechnologyInnovationLab/website
 
 ## One source of truth
 

@@ -974,7 +974,7 @@ export function getEditorialMetadata(kind: EditorialKind, entry?: EditorialEntry
   const collection = editorialCollections[kind];
   const title = `${entry?.title ?? collection.title} | Technology Innovation Lab`;
   const description = entry?.summary ?? collection.description;
-  const canonical = `https://raimonditechnologyinnovationlab.github.io/website/${kind}/${entry ? `${encodeURIComponent(entry.slug)}/` : ""}`;
+  const canonical = `https://scbtechnologyinnovationlab.github.io/website/${kind}/${entry ? `${encodeURIComponent(entry.slug)}/` : ""}`;
   return {
     title,
     description,
@@ -986,7 +986,7 @@ export function getEditorialMetadata(kind: EditorialKind, entry?: EditorialEntry
       type: entry ? "article" : "website",
       ...(entry ? { publishedTime: `${entry.date}T00:00:00.000Z`, ...(entry.author ? { authors: [entry.author] } : {}) } : {}),
       images: [{
-        url: "https://raimonditechnologyinnovationlab.github.io/website/og-til-cells-2026-09-30-v2.png",
+        url: "https://scbtechnologyinnovationlab.github.io/website/og-til-cells-2026-09-30-v2.png",
         width: 1200,
         height: 630,
         alt: "Technology Innovation Lab",
@@ -996,7 +996,7 @@ export function getEditorialMetadata(kind: EditorialKind, entry?: EditorialEntry
       card: "summary_large_image",
       title,
       description,
-      images: ["https://raimonditechnologyinnovationlab.github.io/website/og-til-cells-2026-09-30-v2.png"],
+      images: ["https://scbtechnologyinnovationlab.github.io/website/og-til-cells-2026-09-30-v2.png"],
     },
   };
 }

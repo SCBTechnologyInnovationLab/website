@@ -8,7 +8,7 @@ import { fileURLToPath } from "node:url";
 import ts from "typescript";
 
 const root = dirname(dirname(fileURLToPath(import.meta.url)));
-const publicBase = "https://raimonditechnologyinnovationlab.github.io/website";
+const publicBase = "https://scbtechnologyinnovationlab.github.io/website";
 
 const published = (kind, slug, date) => ({
   slug,

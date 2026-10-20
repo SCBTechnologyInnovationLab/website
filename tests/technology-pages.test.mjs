@@ -14,7 +14,7 @@ test("technology routes export complete, unique metadata and one main heading", 
     assert.equal([...html.matchAll(/<h1[ >]/g)].length, 1);
     assert.equal([...html.matchAll(/<main[ >]/g)].length, 1);
     assert.ok(html.includes(`<title>${title}`));
-    assert.ok(html.includes(`href="https://raimonditechnologyinnovationlab.github.io/website/technologies/${path}"`));
+    assert.ok(html.includes(`href="https://scbtechnologyinnovationlab.github.io/website/technologies/${path}"`));
     assert.match(html, /href="#main"/);
     assert.match(html, /<main id="main" tabindex="-1">/);
     assert.match(html, /href="\/website\/technologies\/" aria-current="page"/);

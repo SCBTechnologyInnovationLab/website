@@ -4,7 +4,7 @@ import { fileURLToPath } from "node:url";
 import test from "node:test";
 
 const output = new URL("../out/", import.meta.url);
-const base = "https://raimonditechnologyinnovationlab.github.io/website/";
+const base = "https://scbtechnologyinnovationlab.github.io/website/";
 const html = await readFile(new URL("index.html", output), "utf8");
 
 async function assertLocalAsset(value, source = base) {

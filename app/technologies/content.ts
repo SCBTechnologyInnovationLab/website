@@ -87,8 +87,8 @@ export function technologyContactHref(technology: Technology): string {
 export function getTechnologyMetadata(technology?: Technology): Metadata {
   const title = `${technology ? `${technology.name} | Try our technologies` : "Try our technologies"} | Technology Innovation Lab`;
   const description = technology?.summary ?? "Explore our technologies, their scientific applications, and ways to try them in your own lab. Start with D&D-seq.";
-  const canonical = `https://raimonditechnologyinnovationlab.github.io/website/technologies/${technology ? `${technology.slug}/` : ""}`;
-  const image = "https://raimonditechnologyinnovationlab.github.io/website/og-til-cells-2026-09-30-v3.png";
+  const canonical = `https://scbtechnologyinnovationlab.github.io/website/technologies/${technology ? `${technology.slug}/` : ""}`;
+  const image = "https://scbtechnologyinnovationlab.github.io/website/og-til-cells-2026-09-30-v3.png";
   return {
     title, description, alternates: { canonical },
     openGraph: { title, description, url: canonical, type: "website", images: [{ url: image, width: 1200, height: 630, alt: "Technology Innovation Lab" }] },

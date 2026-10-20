@@ -3,10 +3,10 @@
 ## Canonical source and publication
 
 - Work in this checkout. The official repository is
-  `https://github.com/RaimondiTechnologyInnovationLab/website.git`, remote
+  `https://github.com/SCBTechnologyInnovationLab/website.git`, remote
   `github`, branch `main`.
 - The official public site is
-  `https://raimonditechnologyinnovationlab.github.io/website/`.
+  `https://scbtechnologyinnovationlab.github.io/website/`.
 - GitHub Actions publishes `main`. The `.openai/hosting.json` manifest and
   Cloudflare/Sites configuration are retained only for compatibility/recovery.
   The previous `chatgpt.site` publication is a separate historical snapshot.

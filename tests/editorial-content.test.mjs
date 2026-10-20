@@ -291,7 +291,7 @@ test("archive and article metadata share the official origin and distinguish con
   for (const kind of ["news", "blog"]) {
     const archive = content.getEditorialMetadata(kind);
     const article = content.getEditorialMetadata(kind, entry());
-    const archiveURL = `https://raimonditechnologyinnovationlab.github.io/website/${kind}/`;
+    const archiveURL = `https://scbtechnologyinnovationlab.github.io/website/${kind}/`;
     assert.equal(archive.alternates.canonical, archiveURL);
     assert.equal(archive.openGraph.url, archiveURL);
     assert.equal(archive.openGraph.type, "website");
@@ -307,7 +307,7 @@ test("archive and article metadata share the official origin and distinguish con
       assert.equal(metadata.twitter.title, metadata.title);
       assert.equal(metadata.openGraph.description, metadata.description);
       assert.equal(metadata.twitter.description, metadata.description);
-      assert.match(metadata.openGraph.images[0].url, /^https:\/\/raimonditechnologyinnovationlab\.github\.io\/website\//);
+      assert.match(metadata.openGraph.images[0].url, /^https:\/\/scbtechnologyinnovationlab\.github\.io\/website\//);
     }
   }
 });

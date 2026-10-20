@@ -14,7 +14,7 @@ const nextConfig: NextConfig = {
   env: {
     NEXT_PUBLIC_BASE_PATH: githubPages ? "/website" : "",
     NEXT_PUBLIC_SITE_ORIGIN: githubPages
-      ? "https://raimonditechnologyinnovationlab.github.io"
+      ? "https://scbtechnologyinnovationlab.github.io"
       : "",
   },
 };

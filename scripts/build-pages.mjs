@@ -56,7 +56,7 @@ try {
     await rename(join(output, file), destination);
   }
   await writeFile(join(output, ".nojekyll"), "");
-  console.log("Static site ready in out/ for https://raimonditechnologyinnovationlab.github.io/website/");
+  console.log("Static site ready in out/ for https://scbtechnologyinnovationlab.github.io/website/");
 } finally {
   await rm(staging, { recursive: true, force: true });
 }
