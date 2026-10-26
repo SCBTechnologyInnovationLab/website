@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="600" viewBox="0 0 600 600" role="img" aria-labelledby="title desc">
+<title id="title">From paired snapshots to a tested rescue</title>
+<desc id="desc">Conceptual illustration: paired molecular measurements at left enter branching inferred trajectories, with a red intervention rerouting a path toward a separate measurement at right. All marks are schematic, not experimental data.</desc>
+<rect width="600" height="600" fill="#f5f3ed"/>
+<circle cx="300" cy="300" r="260" fill="none" stroke="#eae7df" stroke-width="3"/>
+<g fill="none" stroke="#191c1a" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+<rect x="90" y="222" width="108" height="148" rx="18" fill="#eae7df"/>
+<path d="M144 235V356" stroke="#f5f3ed" stroke-width="4"/>
+<path d="M215 295H250M240 285L251 295L240 305"/>
+<path d="M264 295C280 295 286 245 315 220C340 200 359 190 386 190"/>
+<path d="M264 295C295 295 304 332 330 353C349 368 365 374 386 374"/>
+<path d="M294 258C268 223 282 175 318 170C345 166 357 177 359 197" stroke-dasharray="5 10" stroke="#7b342e"/>
+<path d="M374 180L386 190L374 200M374 364L386 374L374 384"/>
+</g>
+<g fill="#191c1a">
+<circle cx="114" cy="250" r="5"/><circle cx="128" cy="269" r="5"/><circle cx="111" cy="288" r="5"/><circle cx="128" cy="309" r="5"/><circle cx="114" cy="341" r="5"/>
+<rect x="158" y="248" width="25" height="6" rx="3"/><rect x="158" y="277" width="18" height="6" rx="3"/><rect x="158" y="306" width="28" height="6" rx="3"/><rect x="158" y="335" width="21" height="6" rx="3"/>
+</g>
+<g fill="#f5f3ed" stroke="#191c1a" stroke-width="3"><circle cx="278" cy="281" r="8"/><circle cx="315" cy="220" r="8"/><circle cx="330" cy="353" r="8"/></g>
+<path d="M288 412C331 423 362 411 370 366C378 321 351 289 364 255C371 237 388 235 409 235" fill="none" stroke="#cf4536" stroke-width="7" stroke-linecap="round"/>
+<path d="M397 224L411 235L397 246" fill="none" stroke="#cf4536" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="283" cy="410" r="18" fill="#cf4536"/>
+<path d="M275 410H291" stroke="#f5f3ed" stroke-width="4" stroke-linecap="round"/>
+<rect x="425" y="182" width="76" height="205" rx="16" fill="#eae7df"/>
+<path d="M439 285H487" stroke="#191c1a" stroke-width="2"/>
+<rect x="440" y="209" width="15" height="61" rx="4" fill="#191c1a"/>
+<rect x="470" y="211" width="15" height="59" rx="4" fill="#cf4536"/>
+<rect x="440" y="308" width="15" height="57" rx="4" fill="#191c1a"/>
+<rect x="470" y="327" width="15" height="38" rx="4" fill="#cf4536"/>
+</svg>

@@ -60,6 +60,167 @@ const newsEntries: readonly EditorialEntry[] = [
 ];
 const blogEntries: readonly EditorialEntry[] = [
 {
+  "slug": "from-cell-snapshots-to-genetic-rescue",
+  "title": "From cell snapshots to genetic rescue",
+  "date": "2026-10-26",
+  "summary": "DynaVelo learns joint RNA and chromatin-accessibility dynamics, then nominates genetic rescue targets tested in mice. We examine what the model learns, what the experiments validate and what remains inferred.",
+  "status": "published",
+  "image": {
+    "src": "/blog-images/snapshots-to-rescue.svg",
+    "alt": "Conceptual paired molecular snapshots feeding branching paths, with a red intervention path and a separate two-part measurement of rescue.",
+    "width": 600,
+    "height": 600
+  },
+  "body": [
+    {
+      "type": "paragraph",
+      "text": "Single-cell sequencing gives us an extraordinary census of molecular states. It usually destroys the cells it measures. The resulting dataset can show which states coexist, but the route between them has to be inferred. That distinction becomes especially important when we ask a model to choose an intervention: an attractive trajectory plot is a much easier result to obtain than a useful genetic prediction."
+    },
+    {
+      "type": "paragraph",
+      "text": "DynaVelo, published in Nature Biotechnology on October 21, 2026, takes that harder question seriously. Alireza Karbalayghareh, Benedikt Pelzer, Christopher R. Chin, Ari Melnick, Darko Barisic and Christina S. Leslie combine paired RNA and chromatin-accessibility measurements in a dynamical model, then use it to nominate genetic changes that could counteract an abnormal B-cell state. The paper includes mouse experiments testing the nominated targets. The central question is how the modeling and the validation fit together, and where their conclusions stop."
+    },
+    {
+      "type": "link",
+      "text": "Read the peer-reviewed DynaVelo paper",
+      "href": "https://www.nature.com/articles/s41587-026-03348-1"
+    },
+    {
+      "type": "heading",
+      "text": "A demanding system for learning motion"
+    },
+    {
+      "type": "paragraph",
+      "text": "Germinal centers are sites where B cells proliferate, undergo selection and differentiate during an immune response. Cells move between a proliferative dark zone and a selection-associated light zone; some recycle, while others move toward memory or antibody-secreting fates. A simple one-way developmental line misses much of this behavior. A method that orders cells beautifully but reverses a recycling route can give a misleading account of the biology."
+    },
+    {
+      "type": "paragraph",
+      "text": "The study starts with wild-type mouse germinal-center B cells and then considers heterozygous loss of Arid1a or Ctcf. Heterozygous means that one gene copy is affected, rather than both. These changes disturb the balance of states and their inferred transitions. Arid1a is a component of a chromatin-remodeling complex and is recurrently altered in B-cell lymphomas, making the system biologically meaningful without turning a normal mouse immune-response experiment into a cancer-treatment trial."
+    },
+    {
+      "type": "heading",
+      "text": "What goes into the model"
+    },
+    {
+      "type": "paragraph",
+      "text": "Each profiled cell supplies two related views. RNA counts report gene expression. ATAC-seq reports accessible chromatin, from which chromVAR computes accessibility scores for transcription-factor motifs. Motifs are short sequence patterns associated with factor binding. Their accessibility can be informative about regulatory activity, but it does not directly measure a particular factor occupying a particular site. Closely related factors may also recognize similar motifs."
+    },
+    {
+      "type": "paragraph",
+      "text": "DynaVelo compresses the RNA and motif measurements into separate latent representations and learns their coupled evolution with a neural ordinary differential equation. An ordinary differential equation describes how a state changes; here, a neural network supplies the function specifying that change. The model then decodes the evolving latent state back into predicted RNA expression and motif accessibility. This provides a continuous rule for motion through state space, rather than only an ordering of the observed cells."
+    },
+    {
+      "type": "paragraph",
+      "text": "The direction of motion does not appear from nowhere. The model is guided by RNA-velocity estimates from scVelo for genes with sufficient spliced and unspliced coverage. Its training objective combines reconstruction of the observations, agreement with those partial velocity estimates, consistency between the two modalities and regularization of latent states and times. The methods describe roughly 400\u20131,000 velocity genes per sample and approximately 3,000\u20134,000 modeled genes after combining variable genes, velocity genes, expressed factors and selected genes of interest."
+    },
+    {
+      "type": "paragraph",
+      "text": "Consequently, \u201cvelocity\u201d here remains a model-derived rate of change. Latent time is an inferred coordinate, not a stopwatch reading for a tracked cell. Extending predictions to more genes does not mean that their rates were independently measured. These qualifications matter when deciding which outputs can support an experimental hypothesis."
+    },
+    {
+      "type": "heading",
+      "text": "From a vector field to a perturbation"
+    },
+    {
+      "type": "paragraph",
+      "text": "A vector field assigns a direction and rate of change to each modeled state. Once the field is represented as an explicit function, we can ask how it changes when an input changes. DynaVelo uses local sensitivity calculations, through Jacobians, to derive state-dependent regulatory relationships. It also makes larger in silico perturbations and compares the resulting RNA and motif velocities with their unperturbed values."
+    },
+    {
+      "type": "paragraph",
+      "text": "The implementation gives \u201cknockout\u201d a specific computational meaning: for a transcription factor, both its RNA value and its motif-accessibility value are set to their minimum observed values across cells; for a non-factor gene, only RNA is lowered. This is a defined intervention on model inputs. It is not a simulation of every molecular consequence of deleting DNA, nor a calibrated dose-response prediction. That difference is particularly relevant when the experimental test uses a heterozygous genetic alteration."
+    },
+    {
+      "type": "paragraph",
+      "text": "A second subtlety is that the inferred regulatory graph changes with cell state. A relationship that helps explain a proliferating cell need not have the same strength or sign near an exit state. This makes the output potentially more informative than one static network for an entire dataset. It also makes validation harder: a literature-supported connection between two genes may not establish the connection in the particular state or direction predicted by the model."
+    },
+    {
+      "type": "heading",
+      "text": "The evidence ladder"
+    },
+    {
+      "type": "paragraph",
+      "text": "The first level of evidence is biological reconstruction. In 7,166 wild-type cells, the model recovers major germinal-center routes, including proliferation, movement toward the light zone and recycling. The paper compares these results with scVelo and MultiVelo and reports advantages in this system. This is a useful coherence check, but agreement with expected biology is weaker evidence than predicting an unmeasured response. It should not be read as a universal ranking across tissues and experimental designs."
+    },
+    {
+      "type": "paragraph",
+      "text": "The next level asks whether simulated perturbations resemble the differences seen in mutant samples. The study includes 6,716 Arid1a-heterozygous and 4,688 Ctcf-heterozygous cells in its initial analyses. The inferred mutant dynamics lose a recycling route and show altered exit behavior. These comparisons connect the learned field to a genetic contrast, although the observed RNA and accessibility measurements and the inferred velocities still occupy different evidential categories."
+    },
+    {
+      "type": "paragraph",
+      "text": "The most compelling step is rescue. Starting from the Arid1a-heterozygous setting, the model nominates Ctcf, Stat3 and Bcl6 as candidate perturbation targets. The evidence combines a previously established Ctcf genetic rescue with new Bcl6 and Stat3 compound-heterozygous mouse experiments. The elevated dark-zone-to-light-zone ratio associated with Arid1a loss is rescued by these additional genetic alterations. The Bcl6 and Stat3 immunophenotyping experiments involve 54 mice across their respective comparison groups, rather than treating thousands of cells as thousands of independent animal replicates."
+    },
+    {
+      "type": "paragraph",
+      "text": "For the Arid1a/Ctcf double-heterozygous comparison, the study also generates new multiome data: two wild-type, two Arid1a-heterozygous and two double-heterozygous samples. These allow a closer comparison of molecular states and inferred dynamics. In centrocytes, reported rescue rates are 38% for RNA expression, 64% for RNA velocity, 51% for motif accessibility and 46% for motif velocity. The metric counts features shifting toward wild-type values; it is not the percentage of mice cured, cells fully normalized or disease risk eliminated. The unequal values are useful precisely because they show that different readouts can recover to different extents."
+    },
+    {
+      "type": "link",
+      "text": "Public validation dataset: GEO GSE334370",
+      "href": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE334370"
+    },
+    {
+      "type": "heading",
+      "text": "What the rescue does, and does not, establish"
+    },
+    {
+      "type": "paragraph",
+      "text": "The animal experiments establish functional genetic interactions for a defined phenotype in this system. That is a meaningful advance beyond asking whether generated cells look plausible. They do not validate every inferred regulatory edge, prove that all reconstructed trajectories occurred in individual cells, or establish a therapeutic strategy in humans. The detailed multiome validation is also strongest for the Ctcf combination; the Bcl6 and Stat3 tests demonstrate the reported immunophenotypic rescue rather than an identical depth of molecular validation for every target."
+    },
+    {
+      "type": "paragraph",
+      "text": "There are broader inference limits. Snapshot data can be compatible with more than one dynamical explanation. Velocity guidance brings assumptions about RNA processing and coverage. Motif accessibility is a proxy that can leave regulatory mechanisms unresolved. Cells absent from the sampled population cannot automatically be recovered faithfully by a generative model. And a successful genetic rescue in one mouse B-cell context does not establish transfer to another tissue, another perturbation strength or an unseen disease state."
+    },
+    {
+      "type": "paragraph",
+      "text": "These are reasons to design sharper experiments, rather than reasons to dismiss the model. The paper supplies an unusually concrete test: choose an intervention using the learned dynamics, make the corresponding genetic comparison and measure a prespecified biological outcome. Separating that external test from quantities inferred by the same analysis pipeline keeps the evidential argument clear."
+    },
+    {
+      "type": "heading",
+      "text": "How we would read and use it"
+    },
+    {
+      "type": "paragraph",
+      "text": "We would begin with Figure 1 to understand the inputs and intervention definition, then read Figure 6 with its legend and methods to see exactly what was validated. Only after that would we spend time on the trajectory visualizations and inferred networks. This order helps prevent the appearance of a smooth vector field from setting the standard of proof."
+    },
+    {
+      "type": "paragraph",
+      "text": "For an experimental group, the practical starting point is a system with paired measurements, enough coverage for directional information, well-defined state transitions and an intervention that can be tested independently. We would predefine the rescue endpoint, preserve biological replicates and compare against simpler baselines before asking whether added model complexity helps. A prospective test should hold the decisive intervention data out of model construction and evaluate both a population phenotype and molecular readouts where feasible. Those are our methodological recommendations, not additional experiments claimed by this paper."
+    },
+    {
+      "type": "paragraph",
+      "text": "The authors provide code, training guidance and processed data, making a bounded reproducibility study possible before planning a larger experiment. Reproducing the analysis still requires checking preprocessing, gene and motif selection, parameter sensitivity and the distinction between training samples and validation samples. Public availability makes scrutiny possible; it does not replace it."
+    },
+    {
+      "type": "link",
+      "text": "DynaVelo code and training tutorial",
+      "href": "https://github.com/karbalayghareh/DynaVelo"
+    },
+    {
+      "type": "link",
+      "text": "Processed data linked by the authors",
+      "href": "https://doi.org/10.6084/m9.figshare.29169602"
+    },
+    {
+      "type": "paragraph",
+      "text": "The practical takeaway is that a useful model of cell-state change should help choose a discriminating experiment. DynaVelo offers a strong example of that loop, connecting multimodal snapshots to a dynamical hypothesis and then to genetic rescue in mice. The next challenge is to learn which parts of that success generalize, while keeping measured outcomes, inferred dynamics and proposed mechanisms clearly separated."
+    },
+    {
+      "type": "paragraph",
+      "text": "Illustration: original conceptual artwork showing paired molecular snapshots, inferred branching paths and a separately measured rescue comparison. It is not a reproduction of a paper figure or experimental data. This commentary is based on the peer-reviewed publisher version; the paper is available under a Creative Commons Attribution 4.0 license."
+    },
+    {
+      "type": "link",
+      "text": "Publisher PDF, including methods and figure legends",
+      "href": "https://www.nature.com/articles/s41587-026-03348-1.pdf"
+    },
+    {
+      "type": "link",
+      "text": "Creative Commons Attribution 4.0",
+      "href": "https://creativecommons.org/licenses/by/4.0/"
+    }
+  ]
+},
+{
   "slug": "when-the-marker-changes-the-message",
   "title": "When the marker changes the message",
   "date": "2026-10-19",
