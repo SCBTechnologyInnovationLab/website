@@ -40,6 +40,26 @@ export interface EditorialEntry {
  */
 const newsEntries: readonly EditorialEntry[] = [
   {
+    slug: "dnd-seq-nyu-isg-nano-seminar-2026",
+    title: "We share D&D-seq at NYU’s ISG Nano Seminar",
+    date: "2026-10-29",
+    summary: "An invited presentation by Ivan Raimondi, and a lively exchange about science and technology development at NYU’s Institute for Systems Genetics.",
+    status: "published",
+    image: {
+      src: "/blog-images/dnd-nyu-seminar.svg",
+      alt: "Conceptual illustration of a DNA-bound protein and paired molecular readouts inside speech bubbles representing scientific exchange.",
+      width: 600,
+      height: 600,
+    },
+    body: [
+      { type: "paragraph", text: "On October 29, 2026, we were invited to share D&D-seq at the Nano Seminar of NYU Langone Health’s Institute for Systems Genetics (ISG). Ivan Raimondi presented our work and joined the discussion about science and technology development." },
+      { type: "paragraph", text: "ISG brings together systems biology, genome engineering, human genetics, and computation to investigate how genomes function. That interdisciplinary setting made it a fitting place to discuss the questions that motivate our work and the technologies we develop to address them." },
+      { type: "paragraph", text: "We had a lot of fun talking science and technology development. Thank you to our hosts for the invitation and the conversation!" },
+      { type: "link", text: "About NYU’s Institute for Systems Genetics", href: "https://med.nyu.edu/departments-institutes/systems-genetics/" },
+      { type: "link", text: "Explore D&D-seq", href: "/technologies/dnd-seq/" },
+    ],
+  },
+  {
     slug: "roswell-park-genomics-epigenomics-symposium-2026",
     title: "Ivan Raimondi speaks at Roswell Park",
     date: "2026-09-30",

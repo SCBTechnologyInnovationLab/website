@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="600" viewBox="0 0 600 600" role="img" aria-labelledby="title desc">
+  <title id="title">D&amp;D-seq in conversation</title>
+  <desc id="desc">Original conceptual illustration of a DNA-bound protein and paired molecular readouts inside a seminar dialogue bubble. A second bubble represents scientific exchange. Schematic artwork, not experimental data or an event photograph.</desc>
+  <rect width="600" height="600" fill="#f5f3ed"/>
+  <circle cx="300" cy="300" r="260" fill="none" stroke="#eae7df" stroke-width="3"/>
+  <path d="M132 150H421Q453 150 453 182V345Q453 377 421 377H261L203 421V377H132Q100 377 100 345V182Q100 150 132 150Z" fill="#eae7df" stroke="#191c1a" stroke-width="5" stroke-linejoin="round"/>
+  <!-- DNA fragment with an occupied site: a diagram, not a stock helix. -->
+  <g fill="none" stroke="#191c1a" stroke-width="5" stroke-linecap="round">
+    <path d="M149 240H401M149 261H401"/>
+    <path d="M162 240V261M187 240V261M212 240V261M237 240V261M312 240V261M337 240V261M362 240V261M387 240V261" stroke-width="3"/>
+  </g>
+  <path d="M250 239C238 227 241 208 254 202C255 185 279 179 290 191C309 187 320 205 311 220C318 235 305 248 291 244L282 256H266Z" fill="#cf4536" stroke="#7b342e" stroke-width="4"/>
+  <g fill="none" stroke="#191c1a" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M275 275V294M275 294H200V307M275 294H350V307"/>
+    <path d="M163 338H237M166 326H190M201 326H226"/>
+    <path d="M314 338H387M323 337V327M341 337V316M359 337V322M377 337V329" stroke="#cf4536"/>
+  </g>
+  <path d="M350 395H448Q476 395 476 423V445Q476 473 448 473H427V499L394 473H350Q322 473 322 445V423Q322 395 350 395Z" fill="#cf4536" stroke="#7b342e" stroke-width="4" stroke-linejoin="round"/>
+  <g fill="#f5f3ed"><circle cx="366" cy="434" r="7"/><circle cx="399" cy="434" r="7"/><circle cx="432" cy="434" r="7"/></g>
+</svg>
