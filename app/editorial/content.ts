@@ -80,6 +80,184 @@ const newsEntries: readonly EditorialEntry[] = [
 ];
 const blogEntries: readonly EditorialEntry[] = [
 {
+  "slug": "from-regulatory-atlas-to-testable-mechanism",
+  "title": "From a regulatory atlas to a testable mechanism",
+  "date": "2026-11-02",
+  "summary": "A new single-cell chromatin genetics atlas prompts a practical question: how do we turn variant associations into experiments? We examine donor scale, colocalization, sequence AI and the evidence needed for a regulatory mechanism.",
+  "status": "published",
+  "image": {
+    "src": "/blog-images/regulatory-atlas-to-mechanism.svg",
+    "alt": "Conceptual illustration of three aligned evidence tracks for genetic variants, chromatin accessibility and RNA, with a dashed link to a separate experimental test.",
+    "width": 600,
+    "height": 600
+  },
+  "body": [
+    {
+      "type": "paragraph",
+      "text": "A genetic association can tell us where to look without telling us what happened. A variant tracks with a disease; a nearby gene looks plausible; an accessible region overlaps the locus. It is tempting to connect those observations into one arrow. For us, the useful question is what evidence each arrow actually carries, and which measurement would make the proposed mechanism fail."
+    },
+    {
+      "type": "paragraph",
+      "text": "This week we read Xue, Fan, Dong and colleagues’ peer-reviewed Nature study, published October 28, 2026: a population-scale map connecting chromatin accessibility, genetic variation, expression and disease. It prompts a practical question: what turns an atlas entry into a testable regulatory hypothesis?"
+    },
+    {
+      "type": "heading",
+      "text": "What the new atlas adds"
+    },
+    {
+      "type": "paragraph",
+      "text": "The main post-filtering ATAC analysis contains 3,472,552 nuclei from 922 donors. Testing 440,996 peaks across 28 immune cell types yielded 243,225 common-variant caQTL associations at 100,483 unique peaks. Colocalization linked 28,834 peaks to 11,204 genes. Association counts are not counts of unique variants or validated enhancers."
+    },
+    {
+      "type": "paragraph",
+      "text": "The workflow assigns pooled nuclei to donors using genotypes, then sums accessibility counts by donor and cell type. Normalized pseudobulk measurements are tested against nearby whole-genome variants, adjusting for age, sex, ancestry and accessibility principal components. This preserves single-cell-defined populations while conducting genetic comparisons between people."
+    },
+    {
+      "type": "link",
+      "text": "Read the new Nature study: genetic variants and chromatin accessibility",
+      "href": "https://www.nature.com/articles/s41586-026-11173-4"
+    },
+    {
+      "type": "heading",
+      "text": "Three measurements, three different questions"
+    },
+    {
+      "type": "paragraph",
+      "text": "A helpful way to read this field is to keep genotype, accessibility and expression on separate lines. Genotype asks which sequence a person carries. ATAC-seq asks where chromatin is accessible to the assay. RNA sequencing asks how many transcripts are captured. None of these measurements is a substitute for the others. An accessible region is not automatically an active enhancer, and an RNA abundance measurement is not a direct transcription-rate measurement."
+    },
+    {
+      "type": "paragraph",
+      "text": "A chromatin-accessibility quantitative trait locus, or caQTL, associates genetic variation with accessibility. An expression QTL associates variation with RNA abundance. The conceptual advantage of collecting both is that a locus can be informative at one layer and quiet at another. A useful analysis therefore preserves disagreement rather than forcing every signal into a single story. When the layers disagree, we should ask whether the biology differs, whether the relevant state is missing, or whether one assay simply has less power."
+    },
+    {
+      "type": "paragraph",
+      "text": "The companion Nature paper by Cuomo and colleagues maps common and rare genetic effects on immune-cell expression. It reports nearly three times as many eGenes as OneK1K, attributing the improvement to a combination of more donors, more cells per donor, finer cell-type resolution and association modelling. That comparison is a reminder that scale is not one knob: increasing cell count, donor count and analytical resolution changes different parts of the experiment."
+    },
+    {
+      "type": "link",
+      "text": "Read the companion expression study, also published October 28, 2026",
+      "href": "https://www.nature.com/articles/s41586-026-10721-2"
+    },
+    {
+      "type": "heading",
+      "text": "Millions of cells do not mean millions of independent people"
+    },
+    {
+      "type": "paragraph",
+      "text": "Imagine two designs with the same total cell count. One samples a few people very deeply; the other samples many people shallowly. The first may describe rare states within those individuals beautifully. The second supplies more independent genetic backgrounds. Neither is universally better. For genotype-to-phenotype mapping, the choice depends on allele frequency, cell-type abundance, measurement noise and the effect size we hope to resolve."
+    },
+    {
+      "type": "paragraph",
+      "text": "This distinction matters most when planning the next study. If a rare immune population is barely observed, more cells from each donor can make its phenotype measurable. If a variant is carried by very few people, adding more cells from those same carriers cannot create additional independent carriers. We would therefore ask for discovery curves against both donors and cells, not celebrate a cell-count headline alone. Batch balance and donor-level uncertainty should remain visible throughout the analysis."
+    },
+    {
+      "type": "heading",
+      "text": "The nearest gene is a candidate, not a destination"
+    },
+    {
+      "type": "paragraph",
+      "text": "A peak is a genomic interval, whereas a gene is a transcriptional unit. Connecting them requires an additional argument. Distance is useful for generating candidates, but it is not a mechanism. Correlated accessibility and expression can also arise because both reflect cell identity or activation. A more convincing hypothesis asks whether genetic evidence helps distinguish the proposed connection from these shared influences."
+    },
+    {
+      "type": "paragraph",
+      "text": "Suppose the same region contains a caQTL, an eQTL and a disease association. Three overlapping plots can still represent more than one underlying signal because nearby variants can be inherited together. Fine-mapping expresses uncertainty over candidate causal variants. Colocalization asks whether the association patterns support a shared signal rather than distinct signals in the same region. The distinction between geographic overlap and shared genetic evidence is essential."
+    },
+    {
+      "type": "paragraph",
+      "text": "The original coloc framework formalized comparison of hypotheses about association with neither trait, one trait, both through different variants, or both through a shared variant. Its conclusions depend on the data and modelling assumptions; a posterior probability is conditional evidence, not a molecular observation. We should read a strong colocalization as a reason to prioritize a mechanism, not as proof that changing accessibility causes the expression change or the disease phenotype."
+    },
+    {
+      "type": "link",
+      "text": "Methodological foundation: Giambartolomei and colleagues’ colocalization study",
+      "href": "https://doi.org/10.1371/journal.pgen.1004383"
+    },
+    {
+      "type": "paragraph",
+      "text": "A large 2026 evaluation by Reales and colleagues makes this ambiguity practical: among colocalizing loci, 37–47% implicated multiple genes. Their sensitivity analyses suggested that false colocalization alone did not explain most of those cases. Several genes can share regulatory evidence, so choosing a single therapeutic target requires more than selecting the strongest-looking regional plot."
+    },
+    {
+      "type": "link",
+      "text": "Read the primary evaluation of eQTL–GWAS colocalization interpretation",
+      "href": "https://doi.org/10.1371/journal.pgen.1012141"
+    },
+    {
+      "type": "heading",
+      "text": "Where sequence AI helps, and where it cannot decide"
+    },
+    {
+      "type": "paragraph",
+      "text": "Sequence models offer a complementary question: if we substitute one allele for another in the input sequence, does the predicted assay signal change? That is valuable for prioritizing among correlated variants and proposing a sequence-level explanation. It also creates a useful tension. A statistical association can exist without a convincing local sequence prediction, and a strong sequence prediction can occur without sufficient human genetic evidence."
+    },
+    {
+      "type": "paragraph",
+      "text": "ChromBPNet was introduced as a bias-factorized model of base-resolution chromatin-accessibility profiles. Its design separates assay enzyme sequence preferences from regulatory sequence effects, an important issue when interpreting nucleotide-level patterns. The methods version linked here is the January 2025 preprint. This is a modelling strategy for a measured signal; a predicted footprint is not a direct observation of a particular transcription factor binding in a particular cell."
+    },
+    {
+      "type": "link",
+      "text": "Read the ChromBPNet methods preprint",
+      "href": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11741299/"
+    },
+    {
+      "type": "paragraph",
+      "text": "For model evaluation, we would separate three tests. Can the model reproduce held-out accessibility profiles? Can it rank allele effects that were not used for training or model selection? Can it guide a new experiment in a different donor or context? Those tests become progressively closer to the use case. Agreement with an existing atlas is encouraging, but it should not be silently promoted into evidence of prospective experimental success."
+    },
+    {
+      "type": "heading",
+      "text": "A state-dependent effect needs a state-aware experiment"
+    },
+    {
+      "type": "paragraph",
+      "text": "Cell labels are useful summaries, not complete descriptions. Two cells assigned to the same broad immune population may differ in activation, differentiation or exposure history. A variant’s effect could be apparent only in one of those contexts. Averaging across them can dilute the association; splitting too aggressively can leave too few observations to estimate it reliably."
+    },
+    {
+      "type": "paragraph",
+      "text": "The experimental consequence is straightforward: preserve the context in which the hypothesis was nominated. If a proposed effect belongs to an activated state, testing only a convenient resting cell model may give an uninformative negative result. Conversely, a result in an engineered cell line does not establish that the effect operates in primary tissue. An inferred state ordering is also not a movie: longitudinal claims require information beyond arranging destructive snapshots along a trajectory."
+    },
+    {
+      "type": "paragraph",
+      "text": "At the inflammatory-bowel-disease locus ADCY7, the authors report that accessibility effects vary with genotype and G-protein pathway activity in CD4 T cells. The atlas covers resting blood, not every relevant tissue or stimulation. For us, that example motivates context-matched testing rather than a context-free variant label."
+    },
+    {
+      "type": "heading",
+      "text": "What would move a locus closer to mechanism?"
+    },
+    {
+      "type": "paragraph",
+      "text": "We would write the hypothesis as a chain with explicit alternatives: a sequence change alters a regulatory feature, which changes a gene’s output in a defined cell context, which changes a relevant phenotype. Then we would ask which links are measured, which are inferred and which have not been tested. This exercise often reveals that the next useful experiment is smaller and more specific than another broad atlas."
+    },
+    {
+      "type": "paragraph",
+      "text": "Gasperini and colleagues’ pooled regulatory screens provide one experimental precedent: perturb candidate regulatory elements and read out transcription at single-cell resolution. The study also used orthogonal deletions for selected examples. Such experiments supply intervention evidence for element-to-gene relationships, but repressing or deleting an element is not equivalent to testing the subtle effect of one naturally occurring allele. The intervention must match the claim."
+    },
+    {
+      "type": "link",
+      "text": "Experimental precedent: mapping gene regulation through cellular genetic screens",
+      "href": "https://doi.org/10.1016/j.cell.2018.11.029"
+    },
+    {
+      "type": "paragraph",
+      "text": "A practical decision sheet would record the candidate variant or credible set, the affected region, the proposed target gene, the relevant cell state and the independent evidence supporting each link. It should also record alternative genes and negative evidence. We would prefer a short list with explicit uncertainty to a long list where every association has been relabelled causal. This makes collaboration between geneticists, computational researchers and experimentalists much more concrete."
+    },
+    {
+      "type": "heading",
+      "text": "What we would take into the next project meeting"
+    },
+    {
+      "type": "list",
+      "items": [
+        "Choose the biological context before choosing the validation model. Ask whether tissue, cell state and donor background match the hypothesis.",
+        "Budget separately for independent donors and cellular depth. Report power at the level of the biological question, not just the total number of profiles.",
+        "Keep association, shared-signal evidence, model prediction and intervention results as separate annotations. Do not collapse them into one confidence label.",
+        "Use disagreement between molecular layers to design the next measurement. A missing RNA effect can be a question to investigate rather than a result to hide."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "The value of a regulatory atlas is not that it finishes the causal story. It makes the next question more precise. Our task as readers is to preserve the distinctions that the data worked hard to establish: a person is not a cell, a peak is not a gene, a shared signal is not mediation, and a prediction is not an intervention. With those distinctions intact, large-scale single-cell genetics becomes a much stronger guide to experiments."
+    }
+  ]
+},
+{
   "slug": "from-cell-snapshots-to-genetic-rescue",
   "title": "From cell snapshots to genetic rescue",
   "date": "2026-10-26",
