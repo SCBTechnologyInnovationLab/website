@@ -80,6 +80,201 @@ const newsEntries: readonly EditorialEntry[] = [
 ];
 const blogEntries: readonly EditorialEntry[] = [
 {
+  "slug": "when-an-ai-plan-reaches-the-bench",
+  "title": "When an AI plan reaches the bench",
+  "date": "2026-11-09",
+  "summary": "AutoDNA connects AI planning to physical experiments. We examine what its scheduling gains, repeatability tests and recovery failures teach us about building reliable automated laboratories.",
+  "status": "published",
+  "image": {
+    "src": "/blog-images/ai-plan-to-bench.svg",
+    "alt": "Conceptual illustration of a protocol branching into liquid handling and a temperature-controlled station, then joining at a measurement with a dashed feedback path.",
+    "width": 600,
+    "height": 600
+  },
+  "body": [
+    {
+      "type": "paragraph",
+      "text": "A laboratory protocol can look complete on a screen and still leave crucial decisions to the person at the bench. Which instrument is free? Has a transfer finished? Can two samples share an incubation without changing their treatment? When something goes wrong, should we repeat the step, discard the sample or stop? These decisions occupy the space between a written method and a trustworthy result."
+    },
+    {
+      "type": "paragraph",
+      "text": "This week we examine Wu, Wang, Wang and colleagues’ AutoDNA study, published in Nature on November 4, 2026. The peer-reviewed paper connects AI planning to physical biomolecular experiments."
+    },
+    {
+      "type": "link",
+      "text": "Read the peer-reviewed AutoDNA paper",
+      "href": "https://www.nature.com/articles/s41586-026-11228-6"
+    },
+    {
+      "type": "paragraph",
+      "text": "For our reading, the useful question is how to evaluate that connection. We can ask whether a system chooses a sensible experiment, executes its instructions correctly and produces interpretable molecular evidence. A strong result at one of these levels cannot replace a test at the others. Keeping them separate makes the engineering achievement easier to appreciate and its limits easier to identify."
+    },
+    {
+      "type": "heading",
+      "text": "A long execution trace is a particular kind of evidence"
+    },
+    {
+      "type": "paragraph",
+      "text": "AutoDNA spans more than 20 instrument types. Its demonstrations cover synthesis, concurrent workflows, DNA data storage and mutation detection. The DNA-storage demonstration alone involved 11,382 atomic operations (Supplementary Table S29)."
+    },
+    {
+      "type": "paragraph",
+      "text": "An atomic operation is a small unit of work within a workflow, rather than an independent biological experiment. Moving a vessel and measuring its contents contribute to an execution record, but they do not provide two independent confirmations of the scientific conclusion. A large operation count can document coordination across a demanding process. Reproducibility still requires repeating the relevant experiment and observing its outcome."
+    },
+    {
+      "type": "paragraph",
+      "text": "This distinction gives us two useful denominators. Engineers need to know how many operations succeeded, failed or required recovery. Scientists need to know how many independently prepared samples or runs supported the result. Reporting both would let a reader distinguish a robust machine from a convincing assay, rather than asking one headline number to stand for both."
+    },
+    {
+      "type": "link",
+      "text": "Inspect the final supplementary experiments, including Tables S29 and S39",
+      "href": "https://static-content.springer.com/esm/art%3A10.1038%2Fs41586-026-11228-6/MediaObjects/41586_2026_11228_MOESM1_ESM.pdf"
+    },
+    {
+      "type": "heading",
+      "text": "Planning, optimization and execution have different jobs"
+    },
+    {
+      "type": "paragraph",
+      "text": "There is a useful history behind this work. Burger and colleagues’ mobile robotic chemist used a batched Bayesian search algorithm to explore photocatalyst mixtures, carrying out 688 experiments over eight days. That 2020 study illustrates a closed experimental loop: use measurements from previous trials to select what to test next within a defined search space."
+    },
+    {
+      "type": "link",
+      "text": "Earlier primary study: A mobile robotic chemist",
+      "href": "https://www.nature.com/articles/s41586-020-2442-2"
+    },
+    {
+      "type": "paragraph",
+      "text": "Boiko and colleagues’ Coscientist subsequently connected large language models with documentation, code and laboratory tools. Their 2023 study included chemical synthesis planning and reaction optimization. Language-driven laboratory orchestration therefore has precedents; the current challenge includes making it dependable across the physical and analytical steps of a workflow."
+    },
+    {
+      "type": "link",
+      "text": "Earlier primary study: Autonomous chemical research with large language models",
+      "href": "https://www.nature.com/articles/s41586-023-06792-0"
+    },
+    {
+      "type": "paragraph",
+      "text": "These examples help us define the roles. A planner translates a goal into proposed actions. An optimizer chooses among experimental conditions using a stated objective. A scheduler decides when resources can execute those actions. An assay determines what happened to the sample. One piece of software may participate in several roles, but each role needs its own test. A fluent explanation of an experiment is weak evidence that its generated instructions will run correctly."
+    },
+    {
+      "type": "heading",
+      "text": "What the 3.2-fold improvement measures"
+    },
+    {
+      "type": "paragraph",
+      "text": "For four synthesis protocols, merging work reduced mean total duration from 1,433.7 to 454.0 minutes across two independent experiments, a 3.2-fold improvement (S6.1.2)."
+    },
+    {
+      "type": "paragraph",
+      "text": "This is a comparison of batch execution schedules. Consider a hypothetical pair of workflows that each require a short transfer followed by a long incubation. Running one whole workflow before starting the other leaves resources idle. Starting the second while the first incubates can reduce the time needed to finish both, even if every molecular reaction takes exactly as long as before."
+    },
+    {
+      "type": "paragraph",
+      "text": "That is a valuable improvement when instruments are shared. It also has conditions. Parallel work must preserve sample identity, required timing and access to shared equipment. Combining compatible operations may help; forcing incompatible ones together may change the experiment. We should therefore evaluate elapsed time alongside assay quality, consumable use, failure rate and the time a person spends recovering stalled runs."
+    },
+    {
+      "type": "paragraph",
+      "text": "The appropriate comparison depends on the intended use. A single urgent sample and a queue of many samples pose different scheduling problems. A speed advantage for one tested batch should motivate further workload tests, including constrained resources and conflicting requests, rather than become a universal claim about faster biochemistry."
+    },
+    {
+      "type": "heading",
+      "text": "The same request is a reproducibility experiment"
+    },
+    {
+      "type": "paragraph",
+      "text": "Repeating one synthesis prompt ten times yielded complete protocols that produced the target sequence in 60% of trials (S9.2)."
+    },
+    {
+      "type": "paragraph",
+      "text": "This small test is especially instructive. Reproducibility begins before a pipette moves if the instructions themselves are generated anew. We need to distinguish variation in the plan from variation in executing a fixed plan. Otherwise, a change in yield could reflect a different procedure, a different reagent preparation or ordinary measurement noise, with no clear way to separate them."
+    },
+    {
+      "type": "paragraph",
+      "text": "For an evaluation, we would freeze and archive a generated protocol, repeat its execution, and separately test repeated generation from the same request. The first experiment asks how reliably the laboratory follows a fixed method. The second asks how reliably the planning system produces an acceptable method. Both need a declared success criterion, a record of failed attempts and enough independent runs to estimate uncertainty. Ten trials can reveal a problem without establishing a stable performance rate for other tasks."
+    },
+    {
+      "type": "heading",
+      "text": "Recovery requires evidence that something went wrong"
+    },
+    {
+      "type": "paragraph",
+      "text": "Of 14 hardware-error events, eight were recovered automatically and six needed manual correction (S9.3)."
+    },
+    {
+      "type": "paragraph",
+      "text": "A recoverable machine fault and an invalid biological result need different responses. A controller may know that a movement did not finish. It may have no direct indication that a sample was contaminated or that an enzyme lost activity. The absence of an equipment alarm should therefore never serve as the sole criterion for releasing a result."
+    },
+    {
+      "type": "paragraph",
+      "text": "Controls make otherwise invisible failures observable. A no-template control asks whether a signal can arise without the intended template. A positive control asks whether the assay can detect a known target under the current conditions. A separately measured reference can reveal drift. These controls should influence the decision to accept, repeat or stop an experiment; merely including their wells in a plate layout is insufficient."
+    },
+    {
+      "type": "paragraph",
+      "text": "We would also record where recovery changes the scientific interpretation. Repeating a transfer after an uncertain partial transfer may alter the amount delivered. Moving a sample to another instrument may alter its waiting time. A successful retry should leave an auditable history, not erase the interruption and make the run appear identical to an uninterrupted one."
+    },
+    {
+      "type": "heading",
+      "text": "Molecular success needs a molecular readout"
+    },
+    {
+      "type": "paragraph",
+      "text": "Enzymatic DNA writing offers a concrete example. Lu and colleagues’ 2022 study engineered terminal deoxynucleotidyl transferase for DNA synthesis with reversible terminators. Such chemistry separates nucleotide addition from the removal of a temporary block, allowing the intended sequence to be assembled through repeated cycles. The enzyme and nucleotide chemistry remain essential even when software coordinates the handling."
+    },
+    {
+      "type": "link",
+      "text": "Molecular-method foundation: enzymatic DNA synthesis with engineered TdT",
+      "href": "https://pubs.acs.org/doi/10.1021/acscatal.1c04879"
+    },
+    {
+      "type": "paragraph",
+      "text": "For a synthesis workflow, completing every scheduled cycle is process evidence. Establishing that the intended product was made requires a suitable analytical measurement. Product amount, sequence correctness and usefulness in a downstream assay answer different questions. An evaluation should state which of these it measures, how it distinguishes the desired product from alternatives, and whether the comparison includes independent preparations."
+    },
+    {
+      "type": "paragraph",
+      "text": "The AutoDNA KRAS example combined sequencing, allele-specific PCR with synthesized primers, and independent Sanger confirmation of G13D (S8)."
+    },
+    {
+      "type": "paragraph",
+      "text": "Different readouts can strengthen an identification, but a demonstrated identification does not establish clinical diagnostic performance. That broader claim would require an appropriately designed study of sensitivity, specificity, sample diversity and failure modes. For research readers, the practical lesson is to match the strength of the conclusion to the design of the validation, rather than to the sophistication of the automation."
+    },
+    {
+      "type": "heading",
+      "text": "What would make a useful laboratory acceptance test?"
+    },
+    {
+      "type": "paragraph",
+      "text": "Imagine evaluating an automated workflow for a routine molecular assay. We would start with a limited set of allowed tasks and an expert-reviewed reference procedure. Before running the comparison, we would specify acceptable product quality, the treatment of failed attempts and the situations that require a person. This is a proposed evaluation design, not an experiment reported by the AutoDNA authors."
+    },
+    {
+      "type": "list",
+      "items": [
+        "Separate protocol generation from fixed-protocol execution, then compare both against the reference procedure.",
+        "Test independent preparations and include controls that can reveal sample-level failures, not only instrument faults.",
+        "Measure total elapsed time and hands-on recovery time under both single-request and shared-instrument workloads.",
+        "Retain the request, model and software versions, executed instructions, instrument events, sample history and raw readouts.",
+        "Predefine when to stop. A system should be allowed to report uncertainty or request intervention rather than produce a result at any cost."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "The authors have released code, which supports inspection of the software architecture. Reproducing an automated laboratory also requires compatible equipment, calibration and explicit operating assumptions. A code release is a starting point for that work, not a substitute for documenting the physical system."
+    },
+    {
+      "type": "link",
+      "text": "Inspect the authors’ AutoDNA repository",
+      "href": "https://github.com/IPADS-X/AutoDNA"
+    },
+    {
+      "type": "paragraph",
+      "text": "The promise is practical: less effort spent translating instructions between people and instruments, and a clearer record of how a result was produced. Realizing that promise requires us to keep planning quality, execution reliability and biological validity visible at the same time. The most useful autonomous laboratory will be one whose successful runs we can explain and whose failures we can recognize."
+    },
+    {
+      "type": "paragraph",
+      "text": "Illustration: original conceptual artwork showing a plan, parallel instrument work and measurement feedback. It is not a reproduction of an experimental figure."
+    }
+  ]
+},
+{
   "slug": "from-regulatory-atlas-to-testable-mechanism",
   "title": "From a regulatory atlas to a testable mechanism",
   "date": "2026-11-02",

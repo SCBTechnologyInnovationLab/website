@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="600" viewBox="0 0 600 600" role="img" aria-labelledby="title desc">
+<title id="title">A laboratory plan becomes coordinated instrument work</title>
+<desc id="desc">Conceptual artwork, not experimental data. A protocol branches into a liquid-handling plate and a temperature-controlled station. Their paths join at a measurement, with a dashed feedback path returning to the plan.</desc>
+<rect width="600" height="600" fill="#f5f3ed"/>
+<g stroke="#191c1a" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
+<rect x="239" y="103" width="122" height="108" rx="13" fill="#eae7df"/>
+<path d="M266 132h68M266 156h44M266 180h55" fill="none"/>
+<path d="M300 214v31M186 245h228M186 245v38M414 245v38" fill="none"/>
+<path d="M175 271l11 12 11-12M403 271l11 12 11-12" fill="none"/>
+<rect x="113" y="307" width="146" height="92" rx="15" fill="#eae7df"/>
+<rect x="348" y="300" width="132" height="105" rx="15" fill="#eae7df"/>
+<path d="M369 327h90" fill="none"/>
+<path d="M186 402v40h228v-34M300 442v37" fill="none"/>
+</g>
+<g fill="#f5f3ed" stroke="#191c1a" stroke-width="4">
+<circle cx="144" cy="339" r="10"/><circle cx="185" cy="339" r="10"/><circle cx="226" cy="339" r="10"/>
+<circle cx="144" cy="370" r="10"/><circle cx="185" cy="370" r="10"/><circle cx="226" cy="370" r="10"/>
+</g>
+<path d="M160 280v-34h25v34l-12 19z" fill="#cf4536"/>
+<circle cx="185" cy="370" r="7" fill="#cf4536"/>
+<path d="M385 377c-14-16 14-19 0-35m29 35c-14-16 14-19 0-35m29 35c-14-16 14-19 0-35" stroke="#cf4536" stroke-width="6" stroke-linecap="round" fill="none"/>
+<circle cx="300" cy="485" r="25" fill="#cf4536"/>
+<path d="M287 485l9 9 18-20" stroke="#f5f3ed" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+<path d="M271 484H102V156h121" stroke="#7b342e" stroke-width="5" stroke-dasharray="8 12" stroke-linecap="round" fill="none"/>
+<path d="M211 145l12 11-12 11" stroke="#7b342e" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+</svg>
