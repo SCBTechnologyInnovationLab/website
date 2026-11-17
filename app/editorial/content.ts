@@ -80,6 +80,87 @@ const newsEntries: readonly EditorialEntry[] = [
 ];
 const blogEntries: readonly EditorialEntry[] = [
 {
+  "slug": "same-cell-count-different-neighborhood",
+  "title": "Same cell count, different neighborhood",
+  "date": "2026-11-16",
+  "summary": "PANGEA uses a shared vocabulary to compare cells across tissues. Its tumor maps show why location can matter as much as abundance, and why an inferred map needs a second measurement.",
+  "status": "published",
+  "image": {
+    "src": "/blog-images/same-cell-count-different-neighborhood.svg",
+    "alt": "Conceptual illustration of two tissue sections with the same number of red cells, arranged at the edge of one section and inside the other.",
+    "width": 600,
+    "height": 600
+  },
+  "body": [
+    {
+      "type": "paragraph",
+      "text": "Imagine two tumor sections with the same number of fibroblasts. In the first, those cells gather outside a tumor-rich region. In the second, they sit among the tumor cells. A count of dissociated cells can make these samples look equivalent. A map of the tissue gives us a way to ask whether the difference matters."
+    },
+    {
+      "type": "paragraph",
+      "text": "In a peer-reviewed Nature Methods resource published on November 12, 2026, Kim and colleagues introduced PANGEA, a reference for comparing cell populations across human organs and diseases. We read the paper for two related reasons: a common vocabulary makes comparisons possible, and a shared reference makes it easier to see which claims still require direct measurement."
+    },
+    {
+      "type": "link",
+      "text": "Read the PANGEA study in Nature Methods (Figs. 1, 5 and 6)",
+      "href": "https://www.nature.com/articles/s41592-026-03295-4"
+    },
+    {
+      "type": "heading",
+      "text": "A common vocabulary for different studies"
+    },
+    {
+      "type": "paragraph",
+      "text": "PANGEA combines 12.6 million cells from reprocessed public sequencing reads with 33.9 million cells from curated datasets. The authors established 32 broad types and identified 165 subtypes within 10 widely distributed major types. They used a language model as one check on study metadata alongside human annotation. Classifiers trained on representative cells, rather than the language model, assigned cell identities."
+    },
+    {
+      "type": "paragraph",
+      "text": "The distinction matters. A note saying where a sample came from and a transcriptome suggesting what a cell is are different kinds of evidence. Standardizing the first makes datasets easier to compare. Standardizing the second gives us reusable labels, at the cost of limiting the vocabulary to what the reference contains. A disease state that does not fit neatly into that vocabulary can be the most interesting part of a dataset."
+    },
+    {
+      "type": "paragraph",
+      "text": "The scale of the collection also answers a different question from the number of independent samples. Millions of cell profiles can expand the variety of expression patterns the reference sees. They do not tell us how many independent donors support a particular contrast, or whether a disease label is confounded with a particular tissue or study. We would check the donor, tissue and study counts for the comparison at hand before interpreting a pooled result."
+    },
+    {
+      "type": "heading",
+      "text": "What a spatial map adds"
+    },
+    {
+      "type": "paragraph",
+      "text": "The authors supplied PANGEA expression profiles to Cell2location, a published method for estimating the mixture of cell types in each spatial measurement. They also used RCTD and found similar broad assignments and patterns in selected datasets. In one analysis across cancer types, estimated enrichment of LRRC15-positive fibroblasts in epithelial cores was inversely associated with reported immunotherapy response rates. The overall proportion of that fibroblast subtype showed no such correlation in their comparison."
+    },
+    {
+      "type": "link",
+      "text": "Read the original Cell2location method paper",
+      "href": "https://www.nature.com/articles/s41587-021-01139-4"
+    },
+    {
+      "type": "paragraph",
+      "text": "A spatial spot can contain RNA from several cells. Deconvolution asks which combination of reference profiles best accounts for that mixture. When two fibroblast subtypes have similar profiles, more than one combination may explain the same counts. Two algorithms agreeing on an overall pattern is useful, but if they use the same reference, the agreement cannot establish whether that reference omitted a relevant cell state. Nor does a spot-level estimate directly show that two individual cells touch."
+    },
+    {
+      "type": "paragraph",
+      "text": "The immunotherapy comparison is also between cancer types, not between patients within a single cancer cohort. From those data alone, we cannot tell whether the spatial feature predicts an individual patient's response, or whether the fibroblasts cause resistance. What we can take from it is a testable question: does the estimated location carry information that an overall count loses?"
+    },
+    {
+      "type": "heading",
+      "text": "Test the reference where it is weakest"
+    },
+    {
+      "type": "paragraph",
+      "text": "The baseline model missed pancreatic endocrine identities absent from its reference. When the authors added an endocrine class, recognition improved in independent data. In a separate stress test, removing fibroblasts from the reference lowered model confidence in the omitted group."
+    },
+    {
+      "type": "paragraph",
+      "text": "That example suggests a concrete way to assess a map before trusting it. Compare a broad reference against one that contains the tissue-specific states we care about. Keep ambiguous labels visible instead of forcing every cell or spot into a subtype. Then use an independent image-based readout to check whether the cells or markers of interest actually localize to the region highlighted by the model. We would define the region before examining the association and ask whether the result holds across independent specimens."
+    },
+    {
+      "type": "paragraph",
+      "text": "The useful product of a reference atlas is a map we can challenge: one that tells us where to look next, what we can compare, and which claim we still need to measure."
+    }
+  ]
+},
+{
   "slug": "when-an-ai-plan-reaches-the-bench",
   "title": "When an AI plan reaches the bench",
   "date": "2026-11-09",

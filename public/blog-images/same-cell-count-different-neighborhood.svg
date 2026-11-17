@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="600" viewBox="0 0 600 600" role="img" aria-labelledby="title desc">
+<title id="title">Same cell count, different neighborhood</title>
+<desc id="desc">Conceptual artwork, not experimental data. Six red cells surround a tissue core on the left. Six red cells occupy a matching core on the right.</desc>
+<rect width="600" height="600" fill="#f5f3ed"/>
+<g transform="translate(170 300)">
+    <path d="M-92-52C-77-90-27-113 24-103C73-94 100-50 102-7C106 38 79 84 35 101C-7 118-65 98-89 61C-109 32-112-17-92-52Z" fill="#eae7df" stroke="#191c1a" stroke-width="5"/>
+    <path d="M-48-28C-37-57-1-65 23-49C45-34 59-9 47 19C40 45 15 62-11 56C-37 50-58 17-53-9Z" fill="#f5f3ed" stroke="#7b342e" stroke-width="4" stroke-dasharray="7 8" stroke-linecap="round"/>
+</g>
+<g transform="translate(430 300)">
+    <path d="M-92-52C-77-90-27-113 24-103C73-94 100-50 102-7C106 38 79 84 35 101C-7 118-65 98-89 61C-109 32-112-17-92-52Z" fill="#eae7df" stroke="#191c1a" stroke-width="5"/>
+    <path d="M-48-28C-37-57-1-65 23-49C45-34 59-9 47 19C40 45 15 62-11 56C-37 50-58 17-53-9Z" fill="#f5f3ed" stroke="#7b342e" stroke-width="4" stroke-dasharray="7 8" stroke-linecap="round"/>
+</g>
+<g fill="#cf4536" stroke="#7b342e" stroke-width="2">
+  <circle cx="131" cy="223" r="9"/><circle cx="185" cy="220" r="9"/>
+  <circle cx="243" cy="273" r="9"/><circle cx="107" cy="340" r="9"/>
+  <circle cx="154" cy="382" r="9"/><circle cx="219" cy="368" r="9"/>
+  <circle cx="412" cy="270" r="9"/><circle cx="439" cy="272" r="9"/>
+  <circle cx="399" cy="293" r="9"/><circle cx="456" cy="299" r="9"/>
+  <circle cx="416" cy="318" r="9"/><circle cx="440" cy="331" r="9"/>
+</g>
+<path d="M291 293h18m-18 14h18" stroke="#191c1a" stroke-width="5" stroke-linecap="round"/>
+</svg>
