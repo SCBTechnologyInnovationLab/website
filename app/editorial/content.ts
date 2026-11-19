@@ -79,6 +79,74 @@ const newsEntries: readonly EditorialEntry[] = [
   },
 ];
 const blogEntries: readonly EditorialEntry[] = [
+  {
+    "slug": "same-guide-different-edit",
+    "title": "Same guide, different edit",
+    "date": "2026-11-19",
+    "summary": "Superb-seq reads genome edits alongside gene expression in the same cell. It shows how much a guide label can leave out.",
+    "status": "published",
+    "image": {
+      "src": "/blog-images/same-guide-different-edit.svg",
+      "alt": "The same guide symbol sits above three cells. Two show different captured DNA edits and RNA traces; the third shows no captured edit. The illustration is conceptual, not experimental data.",
+      "width": 600,
+      "height": 600
+    },
+    "body": [
+      {
+        "type": "paragraph",
+        "text": "Imagine three cells that receive the same CRISPR guide. In one cell, Cas9 cuts where we expect. In another, it cuts somewhere else. In the third, we cannot tell whether it cut at all. If the guide is the only label we read, those cells enter the same group. When their RNA profiles differ, which change should we attribute to the intended target?"
+      },
+      {
+        "type": "paragraph",
+        "text": "In a Nature Methods paper published on November 16, 2026, Lorenzini, Balderson and colleagues introduce Superb-seq, a way to pair evidence of a genome edit with the transcriptome of the cell carrying it. We think its most useful contribution is to make the assignment of cells to a perturbation an experimental measurement rather than a label inherited from the guide."
+      },
+      {
+        "type": "link",
+        "text": "Read the study in Nature Methods (Figs. 2, 4 and 6)",
+        "href": "https://doi.org/10.1038/s41592-026-03319-z"
+      },
+      {
+        "type": "heading",
+        "text": "Read the edit and the cell together"
+      },
+      {
+        "type": "paragraph",
+        "text": "Superb-seq gives a subset of DNA breaks a tag that can be read as RNA. A single-cell barcode then links those edit-reporting transcripts to the cell’s own RNA. The result is two records for each cell: which tagged edits were detected, and which genes were expressed."
+      },
+      {
+        "type": "paragraph",
+        "text": "In one experiment, the authors used seven guides against four chromatin remodelers in approximately 10,000 K562 cells. They detected edits in 5,761 cells and recovered all intended sites and 36 off-target sites. That count describes what the assay captured in this experiment. It does not put the remaining cells in a clean, unedited control group."
+      },
+      {
+        "type": "heading",
+        "text": "The same edit can read differently across cells"
+      },
+      {
+        "type": "paragraph",
+        "text": "One example makes the problem concrete. A guide intended for CHD3 also produced an edit in the first intron of USP9X. Cells carrying that off-target edit had lower USP9X expression. The authors propose that the edit disrupted a regulatory element bound by SP1. The RNA result supports a local effect; it does not, by itself, establish that SP1 binding changed."
+      },
+      {
+        "type": "paragraph",
+        "text": "Cell context also mattered. In the separate benchmarking experiment, one distal off-target edit was associated with higher PKP3 expression in U2OS cells and lower expression in K562 cells. An aggregate measurement across those cell types could obscure the direction of both effects. Knowing where an edit occurred is useful; knowing which cell carried it changes what we can ask."
+      },
+      {
+        "type": "heading",
+        "text": "Where we would use it first"
+      },
+      {
+        "type": "paragraph",
+        "text": "The immediate use we see is to follow up a pooled screen when two guides against the same gene disagree. Are they producing different edits at the target, or is one guide’s apparent phenotype concentrated in cells with a second edit? A guide-level average cannot separate those explanations."
+      },
+      {
+        "type": "paragraph",
+        "text": "We would start with a small set of discordant guides, compare guide-defined and edit-defined groups, and independently verify the candidate sites by targeted DNA sequencing. We would keep cells without a captured edit separate from verified negatives. The paper shows why that matters: Superb-seq and bulk assays each found sites the other missed, and the full workflow was tested in cell lines, not primary cells."
+      },
+      {
+        "type": "paragraph",
+        "text": "The useful test is simple: when we replace a guide label with a measured edit, does the interpretation of the screen change?"
+      }
+    ]
+  },
 {
   "slug": "same-cell-count-different-neighborhood",
   "title": "Same cell count, different neighborhood",

@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="600" viewBox="0 0 600 600" role="img" aria-labelledby="title desc">
+<title id="title">Same guide, different edit</title>
+<desc id="desc">The same guide symbol sits above three cells. Different red DNA marks and RNA traces are visible in two cells; the third has no captured mark. A conceptual illustration, not experimental data.</desc>
+<defs>
+ <pattern id="grain" width="13" height="17" patternUnits="userSpaceOnUse"><path d="M2 4h1m8 8h1M5 15h1" stroke="#7b342e" opacity=".13" stroke-width="1.3" stroke-linecap="round"/></pattern>
+ <pattern id="hatch" width="8" height="8" patternUnits="userSpaceOnUse" patternTransform="rotate(26)"><path d="M0 0V8" stroke="#8c7867" opacity=".24" stroke-width="1.6"/></pattern>
+ 
+ 
+</defs>
+<circle cx="300" cy="300" r="276" fill="#f5f0e5"/>
+<circle cx="300" cy="300" r="276" fill="url(#grain)"/>
+<path d="M100 272h400" stroke="#c6b49a" stroke-width="1.5" stroke-dasharray="2 8"/>
+<path d="M154 216h292m-292 0v21m146-21v21m146-21v21" fill="none" stroke="#a49279" stroke-width="1.7" stroke-dasharray="3 5"/>
+<g transform="translate(152 184)"><g fill="none" stroke="#262421" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M-25 8h19c10 0 13-5 13-12 0-7 6-13 13-13s13 6 13 12-5 12-12 12h-6" />
+  <path d="M-23 14h15m-11-12h10" stroke="#a96647" stroke-width="2.5"/>
+ </g></g>
+<g transform="translate(298 184)"><g fill="none" stroke="#262421" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M-25 8h19c10 0 13-5 13-12 0-7 6-13 13-13s13 6 13 12-5 12-12 12h-6" />
+  <path d="M-23 14h15m-11-12h10" stroke="#a96647" stroke-width="2.5"/>
+ </g></g>
+<g transform="translate(444 184)"><g fill="none" stroke="#262421" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M-25 8h19c10 0 13-5 13-12 0-7 6-13 13-13s13 6 13 12-5 12-12 12h-6" />
+  <path d="M-23 14h15m-11-12h10" stroke="#a96647" stroke-width="2.5"/>
+ </g></g>
+<g transform="translate(152 332)">
+ <g>
+  <path d="M-67-27C-57-59-30-78 4-75c40 3 63 27 68 61 6 39-16 72-55 79-39 7-76-9-88-40-7-16-4-37 4-52Z" fill="#f9f5e9" stroke="#262421" stroke-width="4"/>
+  <path d="M-59 23c9 24 27 33 50 36 24 3 45-4 58-21-7 11-11 17-17 21-34 15-74 5-91-36Z" fill="url(#hatch)"/>
+  <path d="M-45-17c0-19 15-35 36-34 25 0 38 18 36 39-2 21-18 34-40 32-20-2-33-17-32-37Z" fill="#eae2d1" stroke="#63554b" stroke-width="2.4"/>
+  <path d="M-35 -27c8-12 19-14 27-3 8 10 16 12 27 2m-53 8c8-12 19-14 27-3 8 10 16 12 27 2" fill="none" stroke="#262421" stroke-width="2.5" stroke-linecap="round"/>
+  <path d="M-20-25v-8m9 13v-7m13 12v-7m9 7v-6" stroke="#262421" stroke-width="1.3"/>
+ </g><path d="M-10-34l10 4-2 15-10-4z" fill="#c34736" stroke="#7b342e" stroke-width="1.7"/>
+ <path d="M2-19c16 0 21 17 32 14m-16 27c8-8 17 5 25-1m-32 13c7-7 13 4 22 1" fill="none" stroke="#ba4435" stroke-width="3.4" stroke-linecap="round"/>
+</g>
+<g transform="translate(298 332)">
+ <g>
+  <path d="M-67-27C-57-59-30-78 4-75c40 3 63 27 68 61 6 39-16 72-55 79-39 7-76-9-88-40-7-16-4-37 4-52Z" fill="#f9f5e9" stroke="#262421" stroke-width="4"/>
+  <path d="M-59 23c9 24 27 33 50 36 24 3 45-4 58-21-7 11-11 17-17 21-34 15-74 5-91-36Z" fill="url(#hatch)"/>
+  <path d="M-45-17c0-19 15-35 36-34 25 0 38 18 36 39-2 21-18 34-40 32-20-2-33-17-32-37Z" fill="#eae2d1" stroke="#63554b" stroke-width="2.4"/>
+  <path d="M-35 -27c8-12 19-14 27-3 8 10 16 12 27 2m-53 8c8-12 19-14 27-3 8 10 16 12 27 2" fill="none" stroke="#262421" stroke-width="2.5" stroke-linecap="round"/>
+  <path d="M-20-25v-8m9 13v-7m13 12v-7m9 7v-6" stroke="#262421" stroke-width="1.3"/>
+ </g><path d="M-32-32l9-4 5 14-9 4z" fill="#c34736" stroke="#7b342e" stroke-width="1.7"/>
+ <path d="M-27-16c-7 16 4 34 22 33m21-5c8-11 15 10 23 0 4-5 9-4 14-2m-39 22c8-7 18 8 27 0m-43 12c6-6 14 3 19-2" fill="none" stroke="#ba4435" stroke-width="3.4" stroke-linecap="round"/>
+</g>
+<g transform="translate(444 332)">
+ <g>
+  <path d="M-67-27C-57-59-30-78 4-75c40 3 63 27 68 61 6 39-16 72-55 79-39 7-76-9-88-40-7-16-4-37 4-52Z" fill="#f9f5e9" stroke="#262421" stroke-width="4"/>
+  <path d="M-59 23c9 24 27 33 50 36 24 3 45-4 58-21-7 11-11 17-17 21-34 15-74 5-91-36Z" fill="url(#hatch)"/>
+  <path d="M-45-17c0-19 15-35 36-34 25 0 38 18 36 39-2 21-18 34-40 32-20-2-33-17-32-37Z" fill="#eae2d1" stroke="#63554b" stroke-width="2.4"/>
+  <path d="M-35 -27c8-12 19-14 27-3 8 10 16 12 27 2m-53 8c8-12 19-14 27-3 8 10 16 12 27 2" fill="none" stroke="#262421" stroke-width="2.5" stroke-linecap="round"/>
+  <path d="M-20-25v-8m9 13v-7m13 12v-7m9 7v-6" stroke="#262421" stroke-width="1.3"/>
+ </g><path d="M16 19c7-8 15 6 24 0m-30 14c7-6 15 5 20 1" fill="none" stroke="#6c6358" stroke-width="3.4" stroke-linecap="round"/>
+ <circle cx="-10" cy="-26" r="11" fill="none" stroke="#8f8372" stroke-width="1.6" stroke-dasharray="2.3 3.5"/>
+</g>
+</svg>
